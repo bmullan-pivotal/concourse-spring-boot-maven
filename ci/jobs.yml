@@ -50,7 +50,7 @@ jobs:
           cat ./test.jtl  
   - put: resource-deploy-jmeter-report-app
     params:
-      manifest: source-code/jmeter/manifest.ym
+      manifest: source-code/jmeter/manifest.yml
       path: report
 
       
