@@ -9,7 +9,7 @@ image_resource:
 inputs:
 - name: source-code
 outputs:
-- name: soruce-code
+- name: source-code
 
 run:
   path: source-code/ci/tasks/package.sh
