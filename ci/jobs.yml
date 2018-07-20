@@ -12,6 +12,7 @@ jobs:
       path: target/concourse-spring-boot-maven-0.0.1-SNAPSHOT.jar
 - name: jmeter
   plan:
+  - get: source-code
   - task: run-jmeter
     params:
       DOMAIN: sbm.cfapps.io
