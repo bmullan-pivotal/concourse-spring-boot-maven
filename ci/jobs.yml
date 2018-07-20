@@ -25,7 +25,7 @@ jobs:
         source:
           repository: justb4/jmeter
       inputs:
-      -  name: repo
+      -  name: source-code
       outputs:
       - name: report
       run:
