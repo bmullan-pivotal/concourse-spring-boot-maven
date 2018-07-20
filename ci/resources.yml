@@ -15,3 +15,13 @@ resources:
     organization: {{pws-org}}
     space: {{pws-space}}
     skip_cert_check: false
+
+- name: resource-deploy-jmeter-report-app
+  type: cf
+  source:
+    api: https://api.run.pivotal.io
+    username: {{pws-username}}
+    password: {{pws-password}}
+    organization: {{pws-org}}
+    space: {{pws-space}}
+    skip_cert_check: false
