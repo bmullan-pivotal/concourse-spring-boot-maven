@@ -34,7 +34,7 @@ jobs:
         - -c
         - |
           set -e
-          cd repo
+          cd source-code
           jmeter -Dlog_level.jmeter=DEBUG \
             -J DOMAIN=${DOMAIN} \
             -J PORT=${PORT} \
