@@ -10,3 +10,41 @@ jobs:
     params:
       manifest: source-code/manifest.yml
       path: target/concourse-spring-boot-maven-0.0.1-SNAPSHOT.jar
+  - task: run-jmeter
+    params:
+      DOMAIN: sbm.cfapps.io
+      PORT: 443
+      PROTOCOL: https
+      LOOPS: 100
+      NUM_THREADS: 5
+      RAMP_TIME: 1
+    config:
+      platform: linux
+      image_resource:
+        type: docker-image
+        source:
+          repository: justb4/jmeter
+      inputs:
+      -  name: repo
+      outputs:
+      - name: report
+      run:
+        path: bash
+        args: 
+        - -c
+        - |
+          set -e
+          cd repo
+          jmeter -Dlog_level.jmeter=DEBUG \
+            -J DOMAIN=${DOMAIN} \
+            -J PORT=${PORT} \
+            -J PROTOCOL=${PROTOCOL} \
+            -J LOOPS=${LOOPS} \
+            -J NUM_THREADS=${NUM_THREADS} \
+            -J RAMP_TIME=${RAMP_TIME} \
+            -n -t ./jmeter/test.jmx -l test.jtl -j jmeter.log \
+            -e -o ../report
+          echo "==== jmeter.log ===="
+          cat ./jmeter.log
+          echo "==== Raw Test Report ===="
+          cat ./test.jtl  
