@@ -6,6 +6,8 @@ public class Greeting {
     private String content;
 
     public Greeting() {
+        this.id = 0;
+        this.content = null;
 
     }
 
