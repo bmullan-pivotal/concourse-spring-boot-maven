@@ -1,4 +1,6 @@
 target/
 .vagrant/
 credentials.yml
-
+.classpath
+.project
+.settings/
