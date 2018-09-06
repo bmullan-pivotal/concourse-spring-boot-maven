@@ -1,5 +1,6 @@
 jobs:
 - name: package
+  serial: true
   plan:
   - get: source-code
     trigger: true
@@ -11,6 +12,7 @@ jobs:
       manifest: source-code/manifest.yml
       path: target/concourse-spring-boot-maven-0.0.1-SNAPSHOT.jar
 - name: jmeter
+  serial: true
   plan:
   - get: source-code
     trigger: true
