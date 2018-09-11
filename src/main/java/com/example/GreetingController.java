@@ -25,6 +25,12 @@ public class GreetingController {
     public Collection<Greeting> getGreetingsAll() {
         return mapGreetings.values();
     }
+    
+    @RequestMapping("/version")
+    public String version() {
+        return "v1";
+    }
+    
 
     @RequestMapping("/greeting")
     public Greeting greeting(@RequestParam(value="name", defaultValue="World") String name) {
