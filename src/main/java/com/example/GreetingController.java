@@ -22,8 +22,8 @@ public class GreetingController {
     private final AtomicLong counter = new AtomicLong();
 
     @RequestMapping("/")
-    public Collection<Greeting> getGreetingsAll() {
-        return mapGreetings.values();
+    public String getGreetingsAll() {
+        return this.version();
     }
     
     @RequestMapping("/version")
