@@ -28,7 +28,7 @@ public class GreetingController {
     
     @RequestMapping("/version")
     public String version() {
-        return "v2";
+        return "v3";
     }
     
 
