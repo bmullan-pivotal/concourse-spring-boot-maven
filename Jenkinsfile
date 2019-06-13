@@ -20,6 +20,10 @@ pipeline {
             }
             post {
                 success {
+                    sh '''
+                        echo "PWD = ${PWD}"
+                        ls ${PWD}/target
+                    '''
                     junit 'target/surefire-reports/**/*.xml' 
                 }
             }
