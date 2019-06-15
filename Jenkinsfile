@@ -30,29 +30,29 @@ pipeline {
     }
     
     stage('Deploy') {
-        pushToCloudFoundry(
-          target: 'api.run.pivotal.io',
-          organization: 'CVSWksp',
-          cloudSpace: 'BarryM',
-          credentialsId: 'pcf_user',
-          selfSigned: true,
-          servicesToCreate: [
-            []
-          ],
-          manifestChoice: [
-            value: 'jenkinsConfig',
-            appName: 'springboot-jenkins-example',
-            memory: 1024,
-            instances: 1,
-            services: [],
-            envVars: [
-          []
-        ],
-        appPath: 'target/concourse-spring-boot-maven-0.0.1-SNAPSHOT.jar'
-      ]
-    )    
-    }
-
-    
+        steps {
+            pushToCloudFoundry(
+              target: 'api.run.pivotal.io',
+              organization: 'CVSWksp',
+              cloudSpace: 'BarryM',
+              credentialsId: 'pcf_user',
+              selfSigned: true,
+              servicesToCreate: [
+                []
+              ],
+              manifestChoice: [
+                value: 'jenkinsConfig',
+                appName: 'springboot-jenkins-example',
+                memory: 1024,
+                instances: 1,
+                services: [],
+                envVars: [
+              []
+                ],
+                appPath: 'target/concourse-spring-boot-maven-0.0.1-SNAPSHOT.jar'
+              ]
+            )    
+            }
+        }
     }
 }
