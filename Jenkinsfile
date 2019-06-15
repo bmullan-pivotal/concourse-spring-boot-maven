@@ -36,7 +36,7 @@ pipeline {
               organization: 'CVSWksp',
               cloudSpace: 'BarryM',
               credentialsId: 'pcf_user',
-              selfSigned: true,
+              selfSigned: 'true',
               servicesToCreate: [
                 []
               ],
