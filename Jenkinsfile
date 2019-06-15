@@ -38,7 +38,6 @@ pipeline {
               credentialsId: 'pcf_user',
               selfSigned: 'true',
               servicesToCreate: [
-                []
               ],
               manifestChoice: [
                 value: 'jenkinsConfig',
