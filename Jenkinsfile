@@ -47,7 +47,6 @@ pipeline {
                 instances: 1,
                 services: [],
                 envVars: [
-              []
                 ],
                 appPath: 'target/concourse-spring-boot-maven-0.0.1-SNAPSHOT.jar'
               ]
