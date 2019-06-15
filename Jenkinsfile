@@ -43,8 +43,8 @@ pipeline {
               manifestChoice: [
                 value: 'jenkinsConfig',
                 appName: 'springboot-jenkins-example',
-                memory: 1024,
-                instances: 1,
+                memory: '1024',
+                instances: '1',
                 services: [],
                 envVars: [
                 ],
