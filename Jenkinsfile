@@ -35,7 +35,7 @@ pipeline {
               target: 'api.run.pivotal.io',
               organization: 'CVSWksp',
               cloudSpace: 'BarryM',
-              credentialsId: 'pcf_user',
+              credentialsId: 'pcf-user',
               selfSigned: 'true',
               servicesToCreate: [
               ],
